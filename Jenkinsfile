@@ -1,9 +1,7 @@
 pipeline {
     agent any
     environment {
-        SOLACE_HOST = "localhost:8080"
-        SOLACE_USER = credentials('admin')
-        SOLACE_PASS = credentials('admin')
+        SOLACE_CREDS = credentials('solace-admin-creds')
     }
     stages {
         stage('Checkout') {
